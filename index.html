@@ -122,6 +122,24 @@
 
 <script>
 
+  window.onload = function() {
+
+    function contactFormSubmitted(e) {
+      e.preventDefault();
+      let messageText = document.getElementById('message').value;
+      let errorSpace = document.getElementById('form-error');
+
+      if(messageText.length < 20) {
+        errorSpace.style.display = 'block';
+        errorSpace.innerHTML = 'Message cannot be less than 20 characters';
+      }
+    }
+
+    let contactForm = document.getElementById('contact-form');
+    contactForm.addEventListener('submit', contactFormSubmitted);
+
+  }
+
 </script>
 
 
